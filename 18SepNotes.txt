@@ -1,0 +1,189 @@
+> In Bookform component.ts give two string variables for images and in constructor intitialise them with the path of images.
+Then bind the image src in div (typeicon)
+**********************************************
+To create Counter type ka :
+
+> Create pipe for deptCount as ng g pipe pipes/deptCount
+	>export class DeptcountPipe implements PipeTransform {
+
+
+	  transform(books: Book[], dept:string):number {
+ 
+	   return books.filter((b)=>b.dept==dept).length;
+  }
+
+>Within html create these divs as  
+	><div>CSE:
+ 
+	<span>{{books|deptcount:'CSE'}}/{{books.length}}</span>
+  </div>
+*************************************************************************
+
+ORM (Object Relational Mapping)(TWO PARADIGMS(school of thoughts))
+		
+		OOP                      RDBMS
+Enitity	-def	Class			Table
+
+Enitity		Object			Row/Record
+
+Properties	Data Members		Fields/Columns
+
+Relations:
+
+>IS A		Inheritance		Join(Foreign key) 
+
+Realization	
+Generalization
+
+>Has A 		data members		Join(FK)
+
+Composition
+Association
+Aggregation
+
+-------------------------------------------------------------
+
+JPA Java Persistence API
+JTA Java Transaction API
+
+
+Spring ORM
+Hibernate 
+TopLink...etc
+-------------------------------------------------------------
+
+JPA Annotations
+
+@Entity				class level
+@Table(name="tableName")	class level
+@ID				Data member level
+@Column				Data member level
+@Transient			Data member level
+@One-To-One			Data member level
+@One-To-Many			Data member level
+@Many-To-One			Data member level
+@Many-To-Many			Data member level
+
+@Inheritance		 	class level 
+@DiscriminatorColumn		class level  (name="",discriminatorType=DiscriminatorType.STRING)
+@DiscriminatorValue		class level ("value")
+
+@Embedable			class level
+@embeded			Data member level
+---------------------------------------------------
+@Id 				Data member level
+@Column
+@JoinColumn
+@Transient
+---------------------------------------------------------------
+
+Configuration
+	is to inform > Who is JPA provider (hibernate or toplink or whatelse)
+	
+		>the database where abouts(db url)
+		>the database credentials (uid and pwd)
+		>And few more properties or execution params.
+
+Mapping 	>which class to map with which table 
+		>what is primary key in each identity
+		>what is reln.. bw each entity
+------------------------------------------------------------------
+JPA javax.persistence
+	EntityManagerFactory
+	EntityManager
+------------------------------------------------------------------
+HAS A 
+	>ASSOCIATION (Entity A contains Entity B)
+		|
+		|
+		\/
+	Composition				Aggregation
+	(A has B as part of it)
+	(B exists only if A exists)		(they can choose to have their own existence)
+------------------------------------------------------------------------------------------------
+Lazy : only explicit calls can bring the data
+Eager: even if call is not made even then data is brought
+
+
+----------------------------------------------------------------------------
+Spring Data is concept where it provides 
+	
+>JpaRepository(contains CRUD Operations)(Spring will add implementations at the runtime)
+
+
+AN INTERFACE EXTENDS OTHER INTERFACE
+
+
+
+SPRING SIDE VALIDATION
+
+->JAVAX.VALIDATION
+	@NotNUll (for obj)
+	@NotEmpty ( for strings)
+	@Min
+	@Max
+	@Pattern 
+	@Size 
+	@Email
+
+*Inlcude css in static styles 
+
+______________________________________________________________________________
+
+>> IN angular include img [src] class="img-fluid"
+
+
+
+
+
+
+**************************************************************************************
+
+Spring Security:
+
+	[client]------------------------[server] {irrespective of login , every client is a user for the server}
+	{WHEN WE VISIT A SITE , as long as we dont login , we are called anonymous user}
+
+Authorization
+
+	ROLES
+
+Authentication
+	public key		username
+
+	private key 		password
+
+
+
+web sec config----interface
+,,,,,,,,,,,,,, adaptor -----class
+
+****************************************************************************************
+
+	HTTP BASIC
+	Form Based 
+	OpenId
+	Open Authorization(OAuth)
+	LDAP
+	..etc
+
+-------------------------------------------
+
+the mapping matches URLS using following rules
+
+*******************************************************************
+
+ Spring Caching
+https://www.baeldung.com/spring-cache-tutorialspring data 
+https://www.petrikainulainen.net/spring-data-jpa-tutorial/spring data rest
+https://www.baeldung.com/spring-data-rest-introSpring Security
+https://www.baeldung.com/security-spring
+
+Spring Caching:
+
+	@Cachable
+	@CachEvict
+	@CachePut
+	
+
+
